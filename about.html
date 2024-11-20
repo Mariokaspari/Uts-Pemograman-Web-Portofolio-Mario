@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Mario Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+    body {
+      font-family: 'Comic Neue', sans-serif;
+      background: linear-gradient(to bottom, #ffb3b3, #ffd699);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header Styling */
+    header {
+      padding: 20px 40px;
+      background: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      animation: slideIn 1s ease-out;
+    }
+
+    header .logo {
+      font-size: 40px;
+      font-family: 'Bangers', sans-serif;
+      color: #ff4500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 8px #ff4500, 0 0 20px #ff4500;
+    }
+
+    header .logo:hover {
+      color: #ffcc00;
+      text-shadow: 0 0 12px #ffcc00, 0 0 25px #ffcc00;
+    }
+
+    header nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      background-color: #ff4500;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    header nav a:hover {
+      background-color: #ffcc00;
+      color: #333;
+      transform: scale(1.1);
+    }
+
+    /* About Me Section */
+    .about-me {
+      padding: 60px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 1000px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      border: 5px solid #ff4500; /* Comic-style border */
+    }
+
+    .about-me h2 {
+      font-family: 'Bangers', sans-serif;
+      font-size: 40px;
+      color: #ff4500;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .about-me h2::after {
+      content: '!'; 
+      position: absolute;
+      top: -10px;
+      right: -20px;
+      font-size: 50px;
+      color: #ffcc00;
+      transform: rotate(20deg);
+    }
+
+    .about-me p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+      color: #333;
+      text-align: justify;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Text shadow for comic effect */
+    }
+
+    /* Comic Lines */
+    .comic-line {
+      width: 100%;
+      height: 3px;
+      background-color: #ff4500;
+      margin: 10px 0;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Shadow for dramatic effect */
+    }
+
+    /* Adding Software Images Section */
+    .software-images {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .software-images img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      border: 3px solid #ff4500;
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .software-images img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+    }
+
+    /* Comic Speech Bubble */
+    .speech-bubble {
+      position: relative;
+      display: inline-block;
+      padding: 20px;
+      background: #ff4500;
+      color: white;
+      border-radius: 10px;
+      font-family: 'Fredoka One', sans-serif;
+      font-size: 18px;
+      text-align: center;
+      max-width: 80%;
+      margin: 20px auto;
+      border: 3px solid #ff4500;
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 20px;
+      border-style: solid;
+      border-color: #ff4500 transparent transparent transparent;
+    }
+
+    /* About Me Image */
+    .about-me img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      border: 5px solid #ff4500;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+    }
+
+    .about-me img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+    }
+
+    /* Footer Styling */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      font-size: 16px;
+      border-top: 3px solid #ff4500;
+    }
+
+    footer a {
+      color: #ff4500;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-me {
+        padding: 30px 20px;
+      }
+
+      .about-me img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Mario Portfolio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="Portfolio Cover Page.html">Out</a>
+    </nav>
+  </header>
+
+  <!-- About Me Section -->
+  <div class="about-me">
+    <h2>About Me</h2>
+    <img src="d:\Uts Pemograman Web Portofolio Mario\WhatsApp Image 2024-11-04 at 16.16.46.jpeg" alt="Foto Mario Kaspari">
+    
+    <!-- Comic Speech Bubble -->
+    <div class="speech-bubble">
+      Hai, perkenalkan saya Mario Kaspari, seorang desainer grafis dan editor asal Batam, Kepulauan Riau. Saya memulai perjalanan saya di dunia desain pada tahun 2020, saat pertama kali mencoba aplikasi desain seperti PicsArt dan Canva. Pada awalnya, saya hanya ingin mengasah kreativitas dengan desain sederhana, namun semakin lama saya merasa semakin tertarik untuk mendalami lebih jauh teknik dan seni di balik desain visual.
+    </div>
+
+    <p>Di tahun-tahun pertama, saya banyak belajar melalui eksperimen sendiri dan mencari inspirasi dari berbagai tutorial online. Saya mencoba banyak jenis desain, mulai dari poster, desain sosial media, hingga editing foto untuk teman-teman dan klien kecil. Keinginan untuk terus belajar dan berkreasi membawa saya untuk mulai mempelajari software desain profesional seperti Adobe Photoshop dan Illustrator.</p>
+
+    <div class="comic-line"></div> <!-- Comic Line -->
+
+    <p>Saya percaya desain bukan hanya soal estetika, tapi juga soal bagaimana sebuah karya dapat menyampaikan pesan dan menciptakan dampak. Karena itu, saya selalu berusaha untuk mengembangkan keterampilan saya agar dapat membuat desain yang tidak hanya menarik, tetapi juga efektif dan komunikatif.</p>
+
+    <p>Sekarang, saya tidak hanya berkarya di bidang desain grafis, tetapi juga mulai mengembangkan kemampuan dalam pembuatan video dan animasi. Saya ingin terus mengeksplorasi berbagai aspek dalam dunia kreatif dan berharap bisa terus menginspirasi orang lain melalui karya-karya yang saya buat.</p>
+
+    <!-- Software Images Section -->
+    <div class="software-images">
+      <img src="d:\Uts Pemograman Web Portofolio Mario\1656733637logo-canva-png.png" alt="Canva">
+      <img src="d:\Uts Pemograman Web Portofolio Mario\WhatsApp Image 2024-11-20 at 12.07.45.jpeg" alt="PicsArt">
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2024 - Designed by <a href="mailto:mariokaspari2002@gmail.com">Mario Kaspari</a>
+  </footer>
+
+</body>
+
+</html>
